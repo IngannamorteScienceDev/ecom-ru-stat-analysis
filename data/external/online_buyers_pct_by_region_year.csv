@@ -1,0 +1,179 @@
+﻿region,year,online_buyers_pct,indicator_note
+Алтайский край,2022,89.1,proxy_population_internet_users_pct
+Алтайский край,2024,25.7,proxy_fixed_broadband_subscriptions_per_100
+Амурская область,2022,92.7,proxy_population_internet_users_pct
+Амурская область,2024,23.0,proxy_fixed_broadband_subscriptions_per_100
+Архангельская область,2022,88.2,proxy_population_internet_users_pct
+Архангельская область,2024,27.6,proxy_fixed_broadband_subscriptions_per_100
+Архангельская область без автономного округа,2022,88.4,proxy_population_internet_users_pct
+Архангельская область без автономного округа,2024,27.7,proxy_fixed_broadband_subscriptions_per_100
+Астраханская область,2022,91.0,proxy_population_internet_users_pct
+Астраханская область,2024,23.6,proxy_fixed_broadband_subscriptions_per_100
+Белгородская область,2022,86.6,proxy_population_internet_users_pct
+Белгородская область,2024,24.7,proxy_fixed_broadband_subscriptions_per_100
+Брянская область,2022,87.7,proxy_population_internet_users_pct
+Брянская область,2024,27.3,proxy_fixed_broadband_subscriptions_per_100
+Владимирская область,2022,87.6,proxy_population_internet_users_pct
+Владимирская область,2024,32.4,proxy_fixed_broadband_subscriptions_per_100
+Волгоградская область,2022,95.7,proxy_population_internet_users_pct
+Волгоградская область,2024,21.6,proxy_fixed_broadband_subscriptions_per_100
+Вологодская область,2022,88.5,proxy_population_internet_users_pct
+Вологодская область,2024,23.8,proxy_fixed_broadband_subscriptions_per_100
+Воронежская область,2022,95.9,proxy_population_internet_users_pct
+Воронежская область,2024,34.2,proxy_fixed_broadband_subscriptions_per_100
+Еврейская автономная область,2022,84.4,proxy_population_internet_users_pct
+Еврейская автономная область,2024,18.6,proxy_fixed_broadband_subscriptions_per_100
+Забайкальский край,2022,89.9,proxy_population_internet_users_pct
+Забайкальский край,2024,19.2,proxy_fixed_broadband_subscriptions_per_100
+Ивановская область,2022,89.7,proxy_population_internet_users_pct
+Ивановская область,2024,26.8,proxy_fixed_broadband_subscriptions_per_100
+Иркутская область,2022,91.2,proxy_population_internet_users_pct
+Иркутская область,2024,26.4,proxy_fixed_broadband_subscriptions_per_100
+Кабардино-Балкарская Республика,2022,93.8,proxy_population_internet_users_pct
+Кабардино-Балкарская Республика,2024,14.7,proxy_fixed_broadband_subscriptions_per_100
+Калининградская область,2022,93.7,proxy_population_internet_users_pct
+Калининградская область,2024,27.0,proxy_fixed_broadband_subscriptions_per_100
+Калужская область,2022,87.6,proxy_population_internet_users_pct
+Калужская область,2024,29.8,proxy_fixed_broadband_subscriptions_per_100
+Камчатский край,2022,88.3,proxy_population_internet_users_pct
+Камчатский край,2024,21.3,proxy_fixed_broadband_subscriptions_per_100
+Карачаево-Черкесская Республика,2022,91.4,proxy_population_internet_users_pct
+Карачаево-Черкесская Республика,2024,13.1,proxy_fixed_broadband_subscriptions_per_100
+Кемеровская область,2022,87.8,proxy_population_internet_users_pct
+Кемеровская область,2024,25.4,proxy_fixed_broadband_subscriptions_per_100
+Кировская область,2022,86.5,proxy_population_internet_users_pct
+Кировская область,2024,24.5,proxy_fixed_broadband_subscriptions_per_100
+Костромская область,2022,87.8,proxy_population_internet_users_pct
+Костромская область,2024,35.4,proxy_fixed_broadband_subscriptions_per_100
+Краснодарский край,2022,94.6,proxy_population_internet_users_pct
+Краснодарский край,2024,26.2,proxy_fixed_broadband_subscriptions_per_100
+Красноярский край,2022,87.5,proxy_population_internet_users_pct
+Красноярский край,2024,16.7,proxy_fixed_broadband_subscriptions_per_100
+Курганская область,2022,90.7,proxy_population_internet_users_pct
+Курганская область,2024,25.2,proxy_fixed_broadband_subscriptions_per_100
+Курская область,2022,89.3,proxy_population_internet_users_pct
+Курская область,2024,25.8,proxy_fixed_broadband_subscriptions_per_100
+Ленинградская область,2022,89.8,proxy_population_internet_users_pct
+Ленинградская область,2024,17.1,proxy_fixed_broadband_subscriptions_per_100
+Липецкая область,2022,87.2,proxy_population_internet_users_pct
+Липецкая область,2024,30.5,proxy_fixed_broadband_subscriptions_per_100
+Магаданская область,2022,97.3,proxy_population_internet_users_pct
+Магаданская область,2024,26.0,proxy_fixed_broadband_subscriptions_per_100
+Московская область,2022,97.5,proxy_population_internet_users_pct
+Московская область,2024,27.5,proxy_fixed_broadband_subscriptions_per_100
+Мурманская область,2022,92.9,proxy_population_internet_users_pct
+Мурманская область,2024,36.4,proxy_fixed_broadband_subscriptions_per_100
+Ненецкий автономный округ,2022,83.0,proxy_population_internet_users_pct
+Ненецкий автономный округ,2024,25.0,proxy_fixed_broadband_subscriptions_per_100
+Нижегородская область,2022,89.1,proxy_population_internet_users_pct
+Нижегородская область,2024,28.3,proxy_fixed_broadband_subscriptions_per_100
+Новгородская область,2022,82.4,proxy_population_internet_users_pct
+Новгородская область,2024,22.3,proxy_fixed_broadband_subscriptions_per_100
+Новосибирская область,2022,91.1,proxy_population_internet_users_pct
+Новосибирская область,2024,37.4,proxy_fixed_broadband_subscriptions_per_100
+Омская область,2022,91.7,proxy_population_internet_users_pct
+Омская область,2024,22.2,proxy_fixed_broadband_subscriptions_per_100
+Оренбургская область,2022,96.8,proxy_population_internet_users_pct
+Оренбургская область,2024,24.0,proxy_fixed_broadband_subscriptions_per_100
+Орловская область,2022,81.2,proxy_population_internet_users_pct
+Орловская область,2024,28.7,proxy_fixed_broadband_subscriptions_per_100
+Пензенская область,2022,86.2,proxy_population_internet_users_pct
+Пензенская область,2024,22.6,proxy_fixed_broadband_subscriptions_per_100
+Пермский край,2022,92.0,proxy_population_internet_users_pct
+Пермский край,2024,25.2,proxy_fixed_broadband_subscriptions_per_100
+Приморский край,2022,91.4,proxy_population_internet_users_pct
+Приморский край,2024,19.3,proxy_fixed_broadband_subscriptions_per_100
+Псковская область,2022,83.5,proxy_population_internet_users_pct
+Псковская область,2024,24.4,proxy_fixed_broadband_subscriptions_per_100
+Республика Адыгея,2022,93.4,proxy_population_internet_users_pct
+Республика Адыгея,2024,8.5,proxy_fixed_broadband_subscriptions_per_100
+Республика Алтай,2022,90.0,proxy_population_internet_users_pct
+Республика Алтай,2024,14.6,proxy_fixed_broadband_subscriptions_per_100
+Республика Башкортостан,2022,93.7,proxy_population_internet_users_pct
+Республика Башкортостан,2024,24.4,proxy_fixed_broadband_subscriptions_per_100
+Республика Бурятия,2022,92.6,proxy_population_internet_users_pct
+Республика Бурятия,2024,17.1,proxy_fixed_broadband_subscriptions_per_100
+Республика Дагестан,2022,92.4,proxy_population_internet_users_pct
+Республика Дагестан,2024,6.8,proxy_fixed_broadband_subscriptions_per_100
+Республика Ингушетия,2022,86.8,proxy_population_internet_users_pct
+Республика Ингушетия,2024,2.8,proxy_fixed_broadband_subscriptions_per_100
+Республика Калмыкия,2022,96.9,proxy_population_internet_users_pct
+Республика Калмыкия,2024,14.0,proxy_fixed_broadband_subscriptions_per_100
+Республика Карелия,2022,87.5,proxy_population_internet_users_pct
+Республика Карелия,2024,40.0,proxy_fixed_broadband_subscriptions_per_100
+Республика Коми,2022,87.9,proxy_population_internet_users_pct
+Республика Коми,2024,26.2,proxy_fixed_broadband_subscriptions_per_100
+Республика Крым,2022,91.7,proxy_population_internet_users_pct
+Республика Крым,2024,24.2,proxy_fixed_broadband_subscriptions_per_100
+Республика Марий Эл,2022,86.1,proxy_population_internet_users_pct
+Республика Марий Эл,2024,21.8,proxy_fixed_broadband_subscriptions_per_100
+Республика Мордовия,2022,84.8,proxy_population_internet_users_pct
+Республика Мордовия,2024,20.4,proxy_fixed_broadband_subscriptions_per_100
+Республика Саха (Якутия),2022,95.3,proxy_population_internet_users_pct
+Республика Саха (Якутия),2024,20.9,proxy_fixed_broadband_subscriptions_per_100
+Республика Северная Осетия – Алания,2022,93.7,proxy_population_internet_users_pct
+Республика Северная Осетия – Алания,2024,23.3,proxy_fixed_broadband_subscriptions_per_100
+Республика Татарстан,2022,97.9,proxy_population_internet_users_pct
+Республика Татарстан,2024,32.8,proxy_fixed_broadband_subscriptions_per_100
+Республика Тыва,2022,92.7,proxy_population_internet_users_pct
+Республика Тыва,2024,10.8,proxy_fixed_broadband_subscriptions_per_100
+Республика Хакасия,2022,92.3,proxy_population_internet_users_pct
+Республика Хакасия,2024,20.2,proxy_fixed_broadband_subscriptions_per_100
+Ростовская область,2022,93.6,proxy_population_internet_users_pct
+Ростовская область,2024,28.0,proxy_fixed_broadband_subscriptions_per_100
+Рязанская область,2022,90.7,proxy_population_internet_users_pct
+Рязанская область,2024,27.5,proxy_fixed_broadband_subscriptions_per_100
+Самарская область,2022,88.8,proxy_population_internet_users_pct
+Самарская область,2024,25.4,proxy_fixed_broadband_subscriptions_per_100
+Саратовская область,2022,94.2,proxy_population_internet_users_pct
+Саратовская область,2024,24.2,proxy_fixed_broadband_subscriptions_per_100
+Сахалинская область,2022,91.8,proxy_population_internet_users_pct
+Сахалинская область,2024,18.2,proxy_fixed_broadband_subscriptions_per_100
+Свердловская область,2022,90.0,proxy_population_internet_users_pct
+Свердловская область,2024,31.1,proxy_fixed_broadband_subscriptions_per_100
+Смоленская область,2022,87.2,proxy_population_internet_users_pct
+Смоленская область,2024,28.2,proxy_fixed_broadband_subscriptions_per_100
+Ставропольский край,2022,91.3,proxy_population_internet_users_pct
+Ставропольский край,2024,22.6,proxy_fixed_broadband_subscriptions_per_100
+Тамбовская область,2022,90.5,proxy_population_internet_users_pct
+Тамбовская область,2024,27.4,proxy_fixed_broadband_subscriptions_per_100
+Тверская область,2022,84.6,proxy_population_internet_users_pct
+Тверская область,2024,24.1,proxy_fixed_broadband_subscriptions_per_100
+Томская область,2022,84.7,proxy_population_internet_users_pct
+Томская область,2024,28.2,proxy_fixed_broadband_subscriptions_per_100
+Тульская область,2022,93.3,proxy_population_internet_users_pct
+Тульская область,2024,30.8,proxy_fixed_broadband_subscriptions_per_100
+Тюменская область,2022,93.9,proxy_population_internet_users_pct
+Тюменская область,2024,27.5,proxy_fixed_broadband_subscriptions_per_100
+Тюменская область без автономных округов,2022,88.9,proxy_population_internet_users_pct
+Тюменская область без автономных округов,2024,30.3,proxy_fixed_broadband_subscriptions_per_100
+Удмуртская Республика,2022,88.1,proxy_population_internet_users_pct
+Удмуртская Республика,2024,24.4,proxy_fixed_broadband_subscriptions_per_100
+Ульяновская область,2022,88.9,proxy_population_internet_users_pct
+Ульяновская область,2024,22.7,proxy_fixed_broadband_subscriptions_per_100
+Хабаровский край,2022,93.0,proxy_population_internet_users_pct
+Хабаровский край,2024,29.1,proxy_fixed_broadband_subscriptions_per_100
+Ханты-Мансийский автономный округ – Югра,2022,97.3,proxy_population_internet_users_pct
+Ханты-Мансийский автономный округ – Югра,2024,25.5,proxy_fixed_broadband_subscriptions_per_100
+Челябинская область,2022,92.0,proxy_population_internet_users_pct
+Челябинская область,2024,28.3,proxy_fixed_broadband_subscriptions_per_100
+Чеченская Республика,2022,97.3,proxy_population_internet_users_pct
+Чеченская Республика,2024,7.0,proxy_fixed_broadband_subscriptions_per_100
+Чувашская Республика,2022,83.7,proxy_population_internet_users_pct
+Чувашская Республика,2024,20.9,proxy_fixed_broadband_subscriptions_per_100
+Чукотский автономный округ,2022,97.8,proxy_population_internet_users_pct
+Чукотский автономный округ,2024,18.3,proxy_fixed_broadband_subscriptions_per_100
+Ямало-Ненецкий автономный округ,2022,97.2,proxy_population_internet_users_pct
+Ямало-Ненецкий автономный округ,2024,25.4,proxy_fixed_broadband_subscriptions_per_100
+Ярославская область,2022,86.5,proxy_population_internet_users_pct
+Ярославская область,2024,29.6,proxy_fixed_broadband_subscriptions_per_100
+в том числе:,2022,,proxy_population_internet_users_pct
+в том числе:,2022,,proxy_population_internet_users_pct
+в том числе:,2024,,proxy_fixed_broadband_subscriptions_per_100
+в том числе:,2024,,proxy_fixed_broadband_subscriptions_per_100
+г. Москва,2022,97.9,proxy_population_internet_users_pct
+г. Москва1),2024,34.8,proxy_fixed_broadband_subscriptions_per_100
+г. Санкт-Петербург,2022,93.3,proxy_population_internet_users_pct
+г. Санкт-Петербург2),2024,28.3,proxy_fixed_broadband_subscriptions_per_100
+г. Севастополь,2022,95.0,proxy_population_internet_users_pct
+г. Севастополь,2024,22.8,proxy_fixed_broadband_subscriptions_per_100
