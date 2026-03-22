@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ecom-ru-stat-analysis"
+version = "0.1.0"
+description = "Statistical analysis of the Russian e-commerce market"
+requires-python = ">=3.10"
+
+[tool.setuptools]
+package-dir = {"" = "."}

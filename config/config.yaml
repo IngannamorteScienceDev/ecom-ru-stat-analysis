@@ -1,0 +1,40 @@
+project:
+  name: ecom-ru-stat-analysis
+  random_seed: 42
+
+analysis:
+  start_year: 2014
+  end_year: 2025
+  target_column: share_online
+  region_column: region
+  time_column: year
+
+paths:
+  raw_data: data/raw
+  interim_data: data/interim
+  processed_data: data/processed
+  figures: outputs/figures
+  tables: outputs/tables
+  models: outputs/models
+  logs: outputs/logs
+
+sources:
+  rosstat:
+    enabled: true
+    description: "Rosstat retail and internet sales data"
+  cbr:
+    enabled: false
+    description: "Bank of Russia API data"
+  emiss:
+    enabled: false
+    description: "EMISS indicator data"
+  datainsight:
+    enabled: false
+    description: "Industry report data"
+  akit:
+    enabled: false
+    description: "Industry market summaries"
+
+modeling:
+  test_size: 0.2
+  forecast_horizon: 3
