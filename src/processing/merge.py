@@ -1,31 +1,34 @@
 import pandas as pd
 
 from src.utils.paths import get_path
-from src.utils.logging import get_logger, print_info, print_success, print_warning
-
-logger = get_logger(__name__)
+from src.utils.logging import print_info, print_success, print_warning
 
 
 def build_master_dataset() -> None:
     """
-    Build a master analytical dataset.
-
-    In the initial version, the master dataset equals the cleaned Rosstat dataset.
-    Later it can be extended with income, population, CPI, and payment indicators.
+    Build master processed datasets for RF and regions.
     """
-    input_file = get_path("interim_data") / "rosstat_share_online_clean.csv"
-    output_dir = get_path("processed_data")
-    output_dir.mkdir(parents=True, exist_ok=True)
-    output_file = output_dir / "master_dataset.csv"
+    processed_dir = get_path("processed_data")
+    processed_dir.mkdir(parents=True, exist_ok=True)
 
-    print_info("Building master analytical dataset.")
+    rf_input = get_path("interim_data") / "rosstat_share_online_rf_clean.csv"
+    rf_output = processed_dir / "master_rf_dataset.csv"
 
-    if not input_file.exists():
-        logger.warning("Input file not found: %s", input_file)
-        print_warning(f"Input file not found: {input_file}")
-        return
+    regions_input = get_path("interim_data") / "rosstat_share_online_regions_clean.csv"
+    regions_output = processed_dir / "master_regions_dataset.csv"
 
-    df = pd.read_csv(input_file)
-    df.to_csv(output_file, index=False, encoding="utf-8-sig")
-    logger.info("Saved master dataset: %s", output_file)
-    print_success(f"Saved master dataset: {output_file}")
+    print_info("Building processed master datasets.")
+
+    if rf_input.exists():
+        rf_df = pd.read_csv(rf_input)
+        rf_df.to_csv(rf_output, index=False, encoding="utf-8-sig")
+        print_success(f"Saved master RF dataset: {rf_output}")
+    else:
+        print_warning(f"RF clean dataset not found: {rf_input}")
+
+    if regions_input.exists():
+        regions_df = pd.read_csv(regions_input)
+        regions_df.to_csv(regions_output, index=False, encoding="utf-8-sig")
+        print_success(f"Saved master regional dataset: {regions_output}")
+    else:
+        print_warning(f"Regional clean dataset not found: {regions_input}")

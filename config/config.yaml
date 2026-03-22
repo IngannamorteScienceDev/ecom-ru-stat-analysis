@@ -21,10 +21,9 @@ paths:
 sources:
   rosstat:
     enabled: true
-    description: "Rosstat retail and internet sales share data"
-    local_filename: "rosstat_share_online.xlsx"
-    download_url: ""
-    fallback_page: "https://rosstat.gov.ru/statistics/roznichnayatorgovlya"
+    description: "Rosstat retail internet sales share by regions"
+    local_filename: "rosstat_share_online_regions.xlsx"
+    sheet_name: "с 2014 года"
   cbr:
     enabled: false
     description: "Bank of Russia API data"
