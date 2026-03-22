@@ -17,13 +17,20 @@ def export_main_table() -> None:
 
     print_info("Exporting analytical datasets to Excel workbook.")
 
+    has_rf = rf_input.exists()
+    has_regions = regions_input.exists()
+
+    if not has_rf and not has_regions:
+        print_warning("No analytical datasets found for Excel export. Skipping workbook creation.")
+        return
+
     with pd.ExcelWriter(output_file, engine="openpyxl") as writer:
-        if rf_input.exists():
+        if has_rf:
             pd.read_csv(rf_input).to_excel(writer, sheet_name="rf_dynamics", index=False)
         else:
             print_warning(f"RF metrics dataset not found: {rf_input}")
 
-        if regions_input.exists():
+        if has_regions:
             pd.read_csv(regions_input).to_excel(writer, sheet_name="regions_long", index=False)
         else:
             print_warning(f"Regional metrics dataset not found: {regions_input}")

@@ -82,13 +82,12 @@ def _prepare_raw_sheet(file_path: Path, sheet_name: str) -> pd.DataFrame:
     """
     Read Rosstat Excel sheet and flatten header into a single row.
     """
-    # The file has a multi-row header, so we read it raw first.
     raw = pd.read_excel(file_path, sheet_name=sheet_name, header=None)
 
-    # Find the header row with years.
     header_row_idx = None
-    for i in range(min(15, len(raw))):
-        row_text = " ".join(raw.iloc[i].astype(str).tolist())
+    for i in range(min(20, len(raw))):
+        row_values = [str(x) for x in raw.iloc[i].tolist()]
+        row_text = " ".join(row_values)
         if "2014" in row_text and "2015" in row_text:
             header_row_idx = i
             break
@@ -131,12 +130,10 @@ def parse_rosstat_regions_dataset() -> tuple[pd.DataFrame, pd.DataFrame]:
     df = df.rename(columns={region_col: "region"})
     df["region"] = df["region"].astype(str).map(_clean_region_name)
 
-    # Remove empty rows
     df = df[df["region"].notna()]
     df = df[df["region"].str.strip() != ""]
     df = df[df["region"].str.lower() != "nan"]
 
-    # Rename year columns to integers as strings
     rename_map = {orig_col: str(year) for year, orig_col in year_map.items()}
     df = df.rename(columns=rename_map)
 
@@ -152,10 +149,8 @@ def parse_rosstat_regions_dataset() -> tuple[pd.DataFrame, pd.DataFrame]:
         )
         df[col] = pd.to_numeric(df[col], errors="coerce")
 
-    # Keep only rows with at least one numeric year value
     df = df.dropna(subset=year_cols, how="all").reset_index(drop=True)
 
-    # National row
     rf_mask = df["region"].str.contains("Российская Федерация", case=False, na=False)
     if not rf_mask.any():
         raise ValueError("Row 'Российская Федерация' was not found in the dataset.")
@@ -168,7 +163,6 @@ def parse_rosstat_regions_dataset() -> tuple[pd.DataFrame, pd.DataFrame]:
         }
     ).dropna().reset_index(drop=True)
 
-    # Regional long-format table
     regional_df = df.loc[~rf_mask].copy()
     regional_long = regional_df.melt(
         id_vars="region",
