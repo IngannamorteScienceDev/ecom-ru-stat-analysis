@@ -4,7 +4,7 @@ import pandas as pd
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
 
 from src.utils.paths import get_path
-from src.utils.logging import get_logger
+from src.utils.logging import get_logger, print_info, print_success, print_warning
 
 logger = get_logger(__name__)
 
@@ -18,14 +18,18 @@ def run_forecast_stub() -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     output_file = output_dir / "forecast_values.csv"
 
+    print_info("Starting forecast model estimation.")
+
     if not input_file.exists():
         logger.warning("Dataset for forecasting not found: %s", input_file)
+        print_warning(f"Dataset for forecasting not found: {input_file}")
         return
 
     df = pd.read_csv(input_file).sort_values("year").reset_index(drop=True)
 
     if len(df) < 4:
         logger.warning("Not enough observations for forecasting.")
+        print_warning("Not enough observations for forecasting.")
         return
 
     y = df["share_online"]
@@ -39,3 +43,4 @@ def run_forecast_stub() -> None:
     result = pd.DataFrame({"year": future_years, "forecast_share_online": forecast.values})
     result.to_csv(output_file, index=False, encoding="utf-8-sig")
     logger.info("Saved forecast output: %s", output_file)
+    print_success(f"Saved forecast output: {output_file}")
