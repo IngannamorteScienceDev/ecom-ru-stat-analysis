@@ -45,3 +45,4 @@ pytest_cache/
 .mypy_cache/
 coverage.xml
 htmlcov/
+/data/external
