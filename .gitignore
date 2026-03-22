@@ -24,15 +24,17 @@ Thumbs.db
 *.log
 outputs/logs/*
 
-# Data artifacts
-data/raw/*
+# Keep source data for reproducibility
+# data/raw/ is intentionally versioned
+# data/external/ is intentionally versioned
+
+# Ignore generated intermediate and processed data
 data/interim/*
 data/processed/*
-!data/raw/.gitkeep
 !data/interim/.gitkeep
 !data/processed/.gitkeep
 
-# Output artifacts
+# Ignore generated outputs
 outputs/figures/*
 outputs/tables/*
 outputs/models/*
@@ -40,9 +42,14 @@ outputs/models/*
 !outputs/tables/.gitkeep
 !outputs/models/.gitkeep
 
-# Misc
-pytest_cache/
+# Keep curated showcase assets for README
+!docs/
+!docs/assets/
+!docs/assets/figures/
+!docs/assets/tables/
+
+# Testing / caches
+.pytest_cache/
 .mypy_cache/
 coverage.xml
 htmlcov/
-/data/external
