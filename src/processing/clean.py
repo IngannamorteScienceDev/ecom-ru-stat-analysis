@@ -1,9 +1,8 @@
 import pandas as pd
 
 from src.utils.paths import get_path
-from src.utils.logging import get_logger, print_info, print_success, print_warning
-
-logger = get_logger(__name__)
+from src.utils.logging import print_info, print_success, print_warning
+from src.utils.regions import normalize_region_name, classify_territory_level
 
 
 def _clean_rf_dataset() -> None:
@@ -37,7 +36,7 @@ def _clean_rf_dataset() -> None:
 
 def _clean_regions_dataset() -> None:
     """
-    Clean regional long-format dataset.
+    Clean regional long-format dataset and classify rows by territorial level.
     """
     raw_file = get_path("raw_data") / "rosstat_share_online_regions_raw.csv"
     interim_dir = get_path("interim_data")
@@ -51,14 +50,15 @@ def _clean_regions_dataset() -> None:
     df = pd.read_csv(raw_file)
     df.columns = [col.strip().lower() for col in df.columns]
 
-    df["region"] = df["region"].astype(str).str.strip()
+    df["region"] = df["region"].astype(str).map(normalize_region_name)
+    df["territory_level"] = df["region"].map(classify_territory_level)
     df["year"] = pd.to_numeric(df["year"], errors="coerce").astype("Int64")
     df["share_online"] = pd.to_numeric(df["share_online"], errors="coerce")
 
     df = (
         df.dropna(subset=["region", "year", "share_online"])
         .drop_duplicates(subset=["region", "year"])
-        .sort_values(["region", "year"])
+        .sort_values(["territory_level", "region", "year"])
         .reset_index(drop=True)
     )
 

@@ -8,11 +8,15 @@ analysis:
   target_column: share_online
   region_column: region
   time_column: year
+  latest_top_n: 15
+  heatmap_top_n: 25
+  outlier_iqr_multiplier: 1.5
 
 paths:
   raw_data: data/raw
   interim_data: data/interim
   processed_data: data/processed
+  external_data: data/external
   figures: outputs/figures
   tables: outputs/tables
   models: outputs/models
@@ -37,6 +41,12 @@ sources:
     enabled: false
     description: "Industry market summaries"
 
+external_factors:
+  population: "population_by_region_year.csv"
+  income_pc: "income_pc_by_region_year.csv"
+  online_buyers_pct: "online_buyers_pct_by_region_year.csv"
+  cashless_payments_index: "cashless_payments_index_by_region_year.csv"
+
 modeling:
-  test_size: 0.2
   forecast_horizon: 3
+  holdout_years: 2

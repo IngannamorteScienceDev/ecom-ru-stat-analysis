@@ -1,37 +1,69 @@
 import pandas as pd
+import statsmodels.api as sm
 
-from src.utils.paths import get_path
+from src.utils.paths import get_path, load_config
 from src.utils.logging import print_info, print_success, print_warning
 
 
-def build_correlation_outputs() -> None:
+def build_factor_outputs() -> None:
     """
-    Build correlation matrices for available processed datasets.
+    Build factor correlation and regression outputs if external factors are available.
     """
-    rf_input = get_path("processed_data") / "master_rf_dataset_with_metrics.csv"
-    regions_input = get_path("processed_data") / "master_regions_dataset_with_metrics.csv"
+    input_file = get_path("processed_data") / "master_regions_subjects_dataset_with_metrics.csv"
     output_dir = get_path("tables")
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    rf_output = output_dir / "rf_correlation_matrix.csv"
-    regions_output = output_dir / "regions_correlation_matrix.csv"
+    corr_output = output_dir / "subjects_factor_correlation_matrix.csv"
+    reg_output = output_dir / "subjects_factor_regression_coefficients.csv"
+    fit_output = output_dir / "subjects_factor_regression_fit.csv"
 
-    print_info("Building correlation outputs for available numeric variables.")
+    print_info("Building factor-analysis outputs for subject-level dataset.")
 
-    if rf_input.exists():
-        rf_df = pd.read_csv(rf_input)
-        rf_num = rf_df.select_dtypes(include=["number"])
-        if rf_num.shape[1] >= 2:
-            rf_num.corr().to_csv(rf_output, encoding="utf-8-sig")
-            print_success(f"Saved RF correlation matrix: {rf_output}")
-    else:
-        print_warning(f"RF dataset not found: {rf_input}")
+    if not input_file.exists():
+        print_warning(f"Subjects dataset not found: {input_file}")
+        return
 
-    if regions_input.exists():
-        regions_df = pd.read_csv(regions_input)
-        regions_num = regions_df.select_dtypes(include=["number"])
-        if regions_num.shape[1] >= 2:
-            regions_num.corr().to_csv(regions_output, encoding="utf-8-sig")
-            print_success(f"Saved regional correlation matrix: {regions_output}")
-    else:
-        print_warning(f"Regional dataset not found: {regions_input}")
+    df = pd.read_csv(input_file)
+
+    config = load_config()
+    candidate_factors = list(config.get("external_factors", {}).keys())
+    available_factors = [col for col in candidate_factors if col in df.columns and df[col].notna().any()]
+
+    if not available_factors:
+        print_warning("No external factor columns are available yet. Factor analysis skipped.")
+        return
+
+    corr_cols = ["share_online"] + available_factors
+    df[corr_cols].corr().to_csv(corr_output, encoding="utf-8-sig")
+    print_success(f"Saved factor correlation matrix: {corr_output}")
+
+    model_df = df[["share_online", "year"] + available_factors].dropna().copy()
+    if model_df.empty:
+        print_warning("Factor regression dataset is empty after dropping NaN values.")
+        return
+
+    X = model_df[["year"] + available_factors]
+    X = sm.add_constant(X)
+    y = model_df["share_online"]
+
+    model = sm.OLS(y, X).fit()
+
+    coef_df = pd.DataFrame(
+        {
+            "variable": model.params.index,
+            "coefficient": model.params.values,
+            "p_value": model.pvalues.values,
+        }
+    )
+    coef_df.to_csv(reg_output, index=False, encoding="utf-8-sig")
+
+    fit_df = pd.DataFrame(
+        {
+            "metric": ["r_squared", "adj_r_squared", "n_obs"],
+            "value": [model.rsquared, model.rsquared_adj, int(model.nobs)],
+        }
+    )
+    fit_df.to_csv(fit_output, index=False, encoding="utf-8-sig")
+
+    print_success(f"Saved factor regression coefficients: {reg_output}")
+    print_success(f"Saved factor regression fit table: {fit_output}")
